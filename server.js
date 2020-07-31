@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const morgan = require("morgan");
 // const addPostApiRoutes = require("./routes/post-api-routes.js");
 // const addAuthorApiRoutes = require("./routes/author-api-routes.js");
 // const addHtmlRoutes = require("./routes/html-routes.js");
@@ -12,8 +13,10 @@ mongoose.connect("mongodb://localhost/workout", {
 });
 
 const app = express();
-
-
+app.use(morgan("dev"));
+app.use(express.urlencoded({extended: true}));
+app.use(express.json());
+app.use(express.static("public"))
 // Requiring our models for syncing
 // const db = require("./models");
 
