@@ -1,10 +1,18 @@
 const express = require("express");
+const mongoose = require("mongoose");
 // const addPostApiRoutes = require("./routes/post-api-routes.js");
 // const addAuthorApiRoutes = require("./routes/author-api-routes.js");
 // const addHtmlRoutes = require("./routes/html-routes.js");
+const PORT = process.env.PORT || 8080;
+const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/workout";
+
+mongoose.connect("mongodb://localhost/workout", {
+  useNewUrlParser: true,
+  useFindAndModify: false
+});
 
 const app = express();
-const PORT = process.env.PORT || 8080;
+
 
 // Requiring our models for syncing
 // const db = require("./models");
