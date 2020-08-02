@@ -3,7 +3,7 @@ const mongoose = require("mongoose");
 const morgan = require("morgan");
 // const addPostApiRoutes = require("./routes/post-api-routes.js");
 // const addAuthorApiRoutes = require("./routes/author-api-routes.js");
-// const addHtmlRoutes = require("./routes/html-routes.js");
+const addHtmlRoutes = require("./routes/html-routes.js");
 const PORT = process.env.PORT || 8080;
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/workout";
 
@@ -30,11 +30,11 @@ app.use(express.static("public"))
 // Routes
 // addAuthorApiRoutes(app);
 // addPostApiRoutes(app);
-// addHtmlRoutes(app);
+ addHtmlRoutes(app);
 
-app.get("*", (req, res) =>{
-    res.send("<h1>Hello, World!</h1>");
-});
+// app.get("*", (req, res) =>{
+//     res.send("<h1>Hello, World!</h1>");
+// });
 
 // Syncing our sequelize models and then starting our express app
 // db.sequelize.sync({ force: false }).then(() => {
