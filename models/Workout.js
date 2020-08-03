@@ -18,6 +18,8 @@ const WorkoutSchema = new Schema({
 //   return this.exercises.add(this.exercises.totalDuration + 1);
 // });
 
+// const
+
 const Workout = mongoose.model("Workout", WorkoutSchema);
 module.exports = Workout;
 // day: new Date(new Date().setDate(new Date().getDate() - 10)),
