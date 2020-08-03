@@ -7,8 +7,17 @@ const WorkoutSchema = new Schema({
   },
   exercises: {
     type: []
-  },
+  }
+  // ,
+  // toJSON:
+  //  { virtuals: true } 
 });
+
+// Create a virtual property `domain` that's computed from `email`.
+// WorkoutSchema.virtual('totalDuration').get(function() {
+//   return this.exercises.add(this.exercises.totalDuration + 1);
+// });
+
 const Workout = mongoose.model("Workout", WorkoutSchema);
 module.exports = Workout;
 // day: new Date(new Date().setDate(new Date().getDate() - 10)),
