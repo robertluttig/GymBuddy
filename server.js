@@ -6,7 +6,7 @@ const addHtmlRoutes = require("./routes/html-routes.js");
 const PORT = process.env.PORT || 8080;
 const MONGODB_URI = process.env.MONGODB_URI || "mongodb://localhost/workout";
 
-mongoose.connect("mongodb://localhost/workout", {
+mongoose.connect(MONGODB_URI, {
   useNewUrlParser: true,
   useFindAndModify: false
 });
